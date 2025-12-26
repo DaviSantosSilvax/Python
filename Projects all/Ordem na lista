@@ -1,0 +1,12 @@
+my_list = input("Diga números para embaralhar (separados por espaço): ")
+my_list = my_list.split()
+my_list = [int(number) for number in my_list]
+
+new_list = []
+
+for number in my_list:
+    if number not in new_list:
+        new_list.append(number)
+
+print("A lista com os elementos exclusivos é:")
+print(new_list)
