@@ -9,6 +9,7 @@ nf = 0
 nomem = ""
 
 for i in range(1, 5):
+    print(f"\033[1;32;45m.....:::::\033[1;36;45m{i} Pessoa\033[1;32;45m::::.....\033[0;34;47m")
     nome = input("\033[0;34mNome:\033[0;35m ")
     while not nome.isalpha():
         nome = input("\033[0;34mDigite um nome válido:\033[0;35m ")
