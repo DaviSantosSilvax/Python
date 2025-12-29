@@ -15,3 +15,4 @@ if a1 + a2 > a3 and a1 + a3 > a2 and a2 + a3 > a1:
         print("Você possui um \033[0;36;40mTriângulo Escaleno\033[m")
 else:
     print("\033[0;31;40mImpossível formar um triângulo com as retas apresentadas!\033[m")
+
