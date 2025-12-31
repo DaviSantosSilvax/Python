@@ -28,7 +28,7 @@ for i in range(1, 5):
     if sexo == "m" and idade > idadeh:
         idadeh = idade
         nomem = nome
-
+        
     if sexo == "f" and idade < 20:
         nf += 1
 
