@@ -1,0 +1,23 @@
+print("\033[35mIrei Mostrar Menor e Maior Números Lidos e Média entre eles !!!")
+menor = float("inf")
+maior = float("-inf")
+media = 0
+q = 0
+s = 0
+while True:
+    n = int(input("Digite Um Valor \033[32mOu\n\033[31mDigite\033[1m [0]\033[0;31m Para Finalizar:\033[32m "))
+    if n == 0:
+        print("\033[31mPrograma Finalizado!\033[35m")
+        break
+    s += n
+    q += 1
+    if n > maior:
+        maior = n
+    if n < menor:
+        menor = n
+if q == 0:
+    print("Nenhum Valor Foi digitado!!!")
+else:
+    media = s/q
+    print(f"Sua Sequencia Tem {q} Valores\nSeu Maior Número é {maior}\nSeu Menor Número é {menor}\n E a Média Arredondada é {round(media)} de {q} Números")
+    
