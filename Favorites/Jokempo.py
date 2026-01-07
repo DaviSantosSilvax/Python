@@ -1,17 +1,18 @@
 import random
 import time
-
 opc = ["pedra", "papel", "tesoura"]
-
+v = 0
+d = 0
+e = 0
 x = {
     1: "pedra",
     2: "papel",
     3: "tesoura"
 }
-
+jogo_ativo = True
 print("\033[01;35;40mVamos Jogar Jokempô????\033[0;37;40m")
 
-while True:
+while jogo_ativo:
     print("\n\033[01;32;40m1\033[03;35;40m - Valores Numéricos\033[0;37;40m")
     print("\033[01;32;40m2\033[03;35;40m - Escrevendo normalmente\033[0;37;40m")
     print("\033[01;31;40m0\033[03;35;40m - Sair\033[0;37;40m")
@@ -35,7 +36,8 @@ while True:
 
             if jog == "0":
                 print("\033[02;31;40mJogo encerrado!\033[00;37;40m")
-                exit()
+                jogo_ativo = False
+                break
 
             if jog == "9":
                 break
@@ -58,6 +60,7 @@ while True:
 
             if x[jog] == pc:
                 print("\033[01;34;40mEmpate!!!\033[00;37;40m")
+                e += 1
 
             elif (
                 (jog == 1 and pc == "tesoura") or
@@ -65,9 +68,11 @@ while True:
                 (jog == 3 and pc == "papel")
             ):
                 print("\033[01;32;40mVOCÊ GANHOU!!!!\033[00;37;40m")
+                v += 1
 
             else:
                 print("\033[01;31;40mVOCÊ PERDEU!!!\033[00;37;40m")
+                d += 1
 
  
     elif esc == "2":
@@ -82,7 +87,8 @@ while True:
 
             if jog == "sair":
                 print("\033[02;31;40mJogo encerrado!\033[00;37;40m")
-                exit()
+                jogo_ativo = False
+                break
 
             if jog == "menu":
                 print("\033[00;35;40mVoltando ao Menu...\033[00;37;40m")
@@ -105,6 +111,7 @@ while True:
 
             if jog == pc:
                 print("\033[01;34;40mEmpate!!!\033[00;37;40m")
+                e += 1
 
             elif (
                 (jog == "pedra" and pc == "tesoura") or
@@ -112,9 +119,15 @@ while True:
                 (jog == "papel" and pc == "pedra")
             ):
                 print("\033[01;32;40mVocê ganhou!!!!\033[00;37;40m")
+                v += 1
 
             else:
                 print("\033[01;31;40mVocê perdeu!!!\033[00;37;40m")
+                d += 1
 
     else:
         print("\033[02;31;40mOpção inválida!\033[00;37;40m")
+
+print("\033[1;32mJOGO FINALIZADO!!!")
+print("\033[1;35m======="*15)
+print(f"\033[0;32mVocê Venceu \033[1;32m{v} Rodadas\n\033[0;31mVocê Perdeu \033[1;31m{d} Rodadas\n\033[0;33mHouve \033[1;33m{e} Empates\033[0;37m")
